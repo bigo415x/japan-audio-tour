@@ -1,0 +1,22 @@
+{
+  "name": "Audio Guía — Japón",
+  "short_name": "Audio Guía",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4ece0",
+  "theme_color": "#f4ece0",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%23f4ece0'/%3E%3Ccircle cx='96' cy='96' r='52' fill='%23b3573b'/%3E%3Cpath d='M82 72v48l40-24z' fill='%23f4ece0'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23f4ece0'/%3E%3Ccircle cx='256' cy='256' r='140' fill='%23b3573b'/%3E%3Cpath d='M218 192v128l108-64z' fill='%23f4ece0'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
