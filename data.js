@@ -154,10 +154,10 @@ window.TOUR_DATA = {
     "hakone-morning": {
       id: "hakone-morning",
       destination: "hakone",
-      name: "Recorrido Matutino",
-      nameEn: "Morning Script",
-      blurb: "Un día compacto: tren, teleférico y lago.",
-      blurbEn: "A compact day: train, ropeway, and lake.",
+      name: "Primera Mañana — A Hakone",
+      nameEn: "Day 1 — Shinkansen to Hakone",
+      blurb: "Tren bala, teleférico y lago: el primer día en Japón.",
+      blurbEn: "Bullet train, ropeway, and lake: the first day in Japan.",
       languages: ["es", "en"],
       audioDir: "Hakone/Morning_Script",
       stops: [
