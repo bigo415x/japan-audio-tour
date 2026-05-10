@@ -6,7 +6,7 @@ const { useState: useStateS, useEffect: useEffectS, useRef: useRefS, useMemo } =
 // Falls back to manual base order [hakone, tokyo, kyoto] when no dates match meaningfully.
 function sortedDestinations() {
   const all = window.TOUR_DATA.destinations;
-  const baseOrder = ["hakone", "tokyo", "kyoto"];
+  const baseOrder = ["welcome", "hakone", "tokyo", "kyoto"];
   const ordered = baseOrder.map((id) => all.find((d) => d.id === id)).filter(Boolean);
   const now = Date.now();
   function status(d) {
@@ -200,6 +200,7 @@ function TourScreen({ tourId, t, lang, navigate }) {
         label={(tour.nameEn || tour.name).toUpperCase()}
         accent={dest.accent}
         height={220}
+        src={tour.photo}
       />
       <div style={{ padding: "20px 20px 4px" }}>
         <div style={{
@@ -457,6 +458,7 @@ function PlayerScreen({ tourId, stopIndex, t, lang, audioLang, setAudioLang, nav
           ratio="4 / 3"
           rounded={14}
           dim={1.0}
+          src={stop.photo}
         />
       </div>
 

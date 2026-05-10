@@ -5,7 +5,7 @@ const { useState, useEffect, useRef, useCallback } = React;
 
 // ---------- Hero photo placeholder ----------
 // Subtle striped SVG with a monospace label. Designed to be replaced with real photos.
-function HeroPhoto({ label, accent, height = 260, ratio, rounded = 0, dim = 0.86 }) {
+function HeroPhoto({ src, label, accent, height = 260, ratio, rounded = 0, dim = 0.86 }) {
   const stripeColor = accent || "oklch(0.55 0.04 60)";
   const id = "hp-" + Math.random().toString(36).slice(2, 9);
   const style = {
@@ -15,19 +15,23 @@ function HeroPhoto({ label, accent, height = 260, ratio, rounded = 0, dim = 0.86
     borderRadius: rounded,
     overflow: "hidden",
     position: "relative",
-    background: `linear-gradient(135deg, ${stripeColor} 0%, oklch(0.4 0.03 50) 100%)`,
+    background: src ? "#1a1a1a" : `linear-gradient(135deg, ${stripeColor} 0%, oklch(0.4 0.03 50) 100%)`,
     boxShadow: "inset 0 0 0 1px rgba(0,0,0,0.06)",
   };
   return (
     <div style={style}>
-      <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 400 300" style={{ position: "absolute", inset: 0, opacity: 0.18 }}>
-        <defs>
-          <pattern id={id} width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-            <line x1="0" y1="0" x2="0" y2="14" stroke="white" strokeWidth="2" />
-          </pattern>
-        </defs>
-        <rect width="400" height="300" fill={`url(#${id})`} />
-      </svg>
+      {src ? (
+        <img src={src} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+      ) : (
+        <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 400 300" style={{ position: "absolute", inset: 0, opacity: 0.18 }}>
+          <defs>
+            <pattern id={id} width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="14" stroke="white" strokeWidth="2" />
+            </pattern>
+          </defs>
+          <rect width="400" height="300" fill={`url(#${id})`} />
+        </svg>
+      )}
       <div style={{
         position: "absolute", inset: 0,
         background: `linear-gradient(180deg, transparent 40%, rgba(0,0,0,${dim - 0.5}) 100%)`,
@@ -177,7 +181,7 @@ function TourCard({ tour, dest, t, lang, onOpen, progress }) {
     onMouseUp={(e) => e.currentTarget.style.transform = ""}
     onMouseLeave={(e) => e.currentTarget.style.transform = ""}
     >
-      <HeroPhoto label={`${(tour.nameEn || tour.name).toUpperCase()}`} accent={dest.accent} height={150} rounded={0} />
+      <HeroPhoto label={`${(tour.nameEn || tour.name).toUpperCase()}`} accent={dest.accent} height={150} rounded={0} src={tour.photo} />
       <div style={{ padding: "14px 16px 16px", background: "var(--card)" }}>
         <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 10 }}>
           <h3 style={{
