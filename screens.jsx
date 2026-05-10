@@ -57,9 +57,22 @@ function HomeScreen({ t, lang, navigate, openSettings, resume }) {
         }}>
           <em style={{ color: "var(--accent)", fontStyle: "italic" }}>Japón</em>, a tu paso.
         </h1>
-        <p style={{ margin: "0 0 18px", fontSize: 16, color: "var(--ink-soft)", maxWidth: 320 }}>
+        <p style={{ margin: "0 0 10px", fontSize: 16, color: "var(--ink-soft)", maxWidth: 320 }}>
           Siete recorridos en audio. Pulsa play en cada parada.
         </p>
+        <a href="https://bigo415x.github.io/japan-trip-2026/" target="_blank" rel="noopener" style={{
+          display: "inline-flex", alignItems: "center", gap: 6,
+          marginBottom: 18,
+          fontSize: 13, fontFamily: "ui-monospace, monospace",
+          color: "var(--ink-soft)",
+          textDecoration: "none",
+          padding: "5px 10px",
+          border: "1px solid var(--rule)",
+          borderRadius: 999,
+          background: "var(--card)",
+        }}>
+          <span style={{ fontSize: 11 }}>📋</span> Itinerario del viaje
+        </a>
       </div>
 
       {resume && (
