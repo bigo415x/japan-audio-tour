@@ -1,5 +1,5 @@
 // Service worker — caches shell + audio files after first play.
-const VERSION = "v1";
+const VERSION = "v2";
 const SHELL = `audio-tour-shell-${VERSION}`;
 const AUDIO = `audio-tour-audio-${VERSION}`;
 
